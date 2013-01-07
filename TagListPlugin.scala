@@ -39,7 +39,8 @@ object TagListPlugin extends Plugin {
       ) yield {
         map.get(tagName.toLowerCase).map { level =>
           (() => Logger.log(streams.log, 
-            "[%s] %s:%s: %s" format (tagName, file.getName, lineNumber, tagLine.trim), level))
+            "[%s] %s:%s: \033[0;37m%s\033[0m" format (tagName, file.getName, 
+              lineNumber, tagLine.trim), level))
         }
       }
 
